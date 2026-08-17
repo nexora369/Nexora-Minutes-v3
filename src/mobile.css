@@ -44,38 +44,87 @@
     box-shadow: 0 4px 14px rgba(0,0,0,.05);
   }
 
+  /* Mobile home hero: an immersive promotional/ad area rather than a desktop-style text block. */
   .hero.container {
     width: 100%;
     padding: 0;
     margin-top: 0;
     border-radius: 0 0 24px 24px;
-    min-height: 305px;
-    display: block;
+    min-height: 340px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    position: relative;
+    overflow: hidden;
     background:
-      radial-gradient(circle at 85% 18%, rgba(255,255,255,.24), transparent 28%),
-      linear-gradient(135deg, #151518 0%, #2a0c10 48%, #ff1d2d 145%);
+      radial-gradient(circle at 82% 18%, rgba(255,255,255,.22), transparent 24%),
+      radial-gradient(circle at 75% 80%, rgba(255,29,45,.55), transparent 34%),
+      linear-gradient(135deg, #090a0c 0%, #141518 48%, #520b12 100%);
     color: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    box-shadow: 0 12px 30px rgba(0,0,0,.16);
   }
-  .hero-copy { padding: 28px 18px 24px; }
-  .eyebrow { color: #fff; opacity: .82; font-size: 9px; letter-spacing: 1px; }
+  .hero.container::before {
+    content: "";
+    position: absolute;
+    inset: auto -30px -75px auto;
+    width: 220px;
+    height: 220px;
+    border: 28px solid rgba(255,255,255,.09);
+    border-radius: 50%;
+  }
+  .hero-copy { padding: 30px 8px 24px 18px; position: relative; z-index: 3; }
+  .eyebrow { color: #fff; opacity: .9; font-size: 8px; letter-spacing: 1.05px; }
   .hero h1 {
     margin: 10px 0 10px;
-    font-size: clamp(31px, 10vw, 45px);
+    font-size: clamp(29px, 9.5vw, 43px);
     line-height: .98;
     letter-spacing: -2px;
   }
-  .hero h1 span { color: #fff; }
-  .hero p { color: rgba(255,255,255,.82); font-size: 12px; line-height: 1.5; max-width: 330px; }
-  .hero .primary-btn { background: #fff; color: var(--mobile-red); box-shadow: none; padding: 11px 14px; }
-  .trust-row { margin-top: 15px; gap: 8px; color: rgba(255,255,255,.82); font-size: 9px; }
-  .hero-visual { display: none; }
+  .hero h1 span { color: var(--mobile-red); }
+  .hero p { color: rgba(255,255,255,.76); font-size: 11px; line-height: 1.45; max-width: 220px; }
+  .hero .primary-btn { background: var(--mobile-red); color: #fff; box-shadow: 0 9px 25px rgba(255,29,45,.28); padding: 10px 12px; font-size: 11px; }
+  .trust-row { margin-top: 13px; gap: 7px; color: rgba(255,255,255,.78); font-size: 8px; }
+  .hero-visual { display: block; position: relative; min-height: 340px; background: radial-gradient(circle at 48% 48%, rgba(255,255,255,.12), transparent 52%); }
+  .speed-ring {
+    width: 142px;
+    height: 142px;
+    border-width: 20px;
+    font-size: 58px;
+    position: absolute;
+    top: 66px;
+    right: 17px;
+    transform: rotate(-12deg);
+    background: rgba(255,255,255,.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,.22);
+  }
+  .speed-ring span { transform: translate(52px,-44px) rotate(12deg); font-size: 25px; }
+  .hero-visual::before,
+  .hero-visual::after {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: #fff;
+    color: #111;
+    font-size: 38px;
+    box-shadow: 0 14px 30px rgba(0,0,0,.25);
+  }
+  .hero-visual::before { content: "🍚"; top: 20px; right: 12px; transform: rotate(7deg); }
+  .hero-visual::after { content: "🥤"; bottom: 60px; right: 55px; transform: rotate(-8deg); }
+  .floating-card { right: 8px; bottom: 20px; padding: 8px 9px; border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.58); color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,.24); font-size: 8px; border-radius: 9px; }
+  .floating-card svg { color: var(--mobile-red); width: 13px; }
 
-  .category-area, .products-section, .why { padding-top: 28px; }
-  .section-heading { margin-bottom: 12px; }
+  /* The old two promo cards are absorbed into the top hero. */
+  .promo { display: none; }
+
+  .category-area, .products-section, .why { padding-top: 24px; }
+  .category-area { padding-inline: 12px; }
+  .section-heading { margin-bottom: 10px; }
   .section-heading h2 { font-size: 21px; }
-  .section-kicker { font-size: 9px; }
+  .section-kicker { font-size: 8px; }
 
+  /* First category row intentionally contains only the two primary tabs requested. */
   .primary-category-row {
     display: flex;
     gap: 9px;
@@ -84,67 +133,46 @@
     scrollbar-width: none;
   }
   .primary-category-row::-webkit-scrollbar { display: none; }
-  .primary-category {
-    flex: 0 0 116px;
-    min-height: 68px;
-    border-radius: 14px;
-    padding: 10px;
-  }
+  .primary-category { flex: 0 0 145px; min-height: 66px; border-radius: 15px; padding: 10px 11px; background: #fff; }
+  .primary-category:nth-child(2) { flex-basis: 145px; }
   .primary-category span { width: 34px; height: 34px; font-size: 19px; border-radius: 10px; }
   .primary-category strong { font-size: 11px; }
   .primary-category svg { display: none; }
+  .primary-category:nth-child(2) { background: #111; color: #fff; border-color: #111; }
 
+  /* Second category row is a dense horizontal catalog that can be swiped sideways. */
   .secondary-category-row {
-    gap: 8px;
-    padding: 8px 1px 4px;
-  }
-  .secondary-category {
-    flex-basis: 92px;
-    min-height: 82px;
-    border-radius: 13px;
-    padding: 8px 5px;
-    gap: 5px;
-  }
-  .secondary-category span { font-size: 24px; }
-  .secondary-category strong { font-size: 9px; }
-  .category-toggle { font-size: 10px; margin-top: 6px; }
-
-  .promo {
     display: flex;
+    gap: 8px;
     overflow-x: auto;
-    gap: 10px;
-    padding-top: 22px;
-    padding-bottom: 2px;
+    padding: 8px 1px 4px;
     scrollbar-width: none;
   }
-  .promo::-webkit-scrollbar { display: none; }
-  .promo-card {
-    flex: 0 0 86%;
-    min-height: 155px;
-    padding: 20px;
-    border-radius: 17px;
-  }
-  .promo-card h2 { font-size: 22px; margin: 10px 0 6px; }
-  .promo-card p { font-size: 11px; }
+  .secondary-category-row::-webkit-scrollbar { display: none; }
+  .secondary-category { flex: 0 0 88px; min-height: 82px; border-radius: 13px; padding: 8px 5px; gap: 5px; background: #fafafa; }
+  .secondary-category span { font-size: 24px; }
+  .secondary-category strong { font-size: 9px; line-height: 1.2; }
+  .secondary-category:hover, .secondary-category.active { border-color: var(--mobile-red); transform: none; box-shadow: 0 5px 16px rgba(0,0,0,.07); }
+  .category-toggle { font-size: 10px; margin-top: 6px; }
+
+  /* Product browsing: two-column, image-forward cards visible immediately on mobile. */
+  .products-section { padding-inline: 12px; }
+  .products-section .section-heading { position: relative; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
+  .product-card { border: 1px solid #e7e7e8; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,.045); }
+  .product-image { height: 142px; background: linear-gradient(145deg, #f8f8f8, #efeff0); }
+  .product-emoji { font-size: 56px; }
+  .product-info { padding: 9px; }
+  .product-info h3 { font-size: 12px; min-height: 30px; }
+  .product-info p { font-size: 10px; }
+  .price-row { margin-top: 7px; }
+  .price-row strong { font-size: 15px; }
+  .stock-row { margin-top: 7px; }
+  .stock-row span { font-size: 8px; }
+  .stock-row button { padding: 6px 8px; font-size: 10px; background: #fff; }
+  .discount-badge { background: var(--mobile-red); }
 
   .wide-offer { margin-top: 22px; padding: 20px; border-radius: 17px; }
-
-  /* Dense but readable mobile product browsing. */
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-  }
-  .product-card { border-radius: 14px; }
-  .product-image { height: 145px; }
-  .product-emoji { font-size: 58px; }
-  .product-info { padding: 9px; }
-  .product-info h3 { font-size: 12px; }
-  .product-info p { font-size: 10px; }
-  .price-row strong { font-size: 15px; }
-  .stock-row { margin-top: 8px; }
-  .stock-row span { font-size: 9px; }
-  .stock-row button { padding: 6px 8px; font-size: 10px; }
-
   .why { margin-top: 30px; margin-bottom: 25px; padding: 20px; display: block; }
   .why h2 { font-size: 22px; }
   .why-grid { grid-template-columns: repeat(3, 1fr); margin-top: 14px; gap: 7px; }
@@ -158,18 +186,18 @@
 
   .bottom-nav {
     position: fixed;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
     z-index: 80;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 8px 6px;
-    border: 1px solid #e7e7e8;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 7px 5px;
+    border: 1px solid #1c1c1e;
     border-radius: 18px;
-    background: rgba(255,255,255,.96);
+    background: rgba(10,10,11,.96);
     backdrop-filter: blur(14px);
-    box-shadow: 0 12px 35px rgba(0,0,0,.16);
+    box-shadow: 0 12px 35px rgba(0,0,0,.24);
   }
 
   .cart-drawer, .checkout-drawer, .success-drawer { width: 100%; border-radius: 20px 20px 0 0; }
