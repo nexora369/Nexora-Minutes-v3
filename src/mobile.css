@@ -44,7 +44,6 @@
     box-shadow: 0 4px 14px rgba(0,0,0,.05);
   }
 
-  /* Mobile home hero: an immersive promotional/ad area rather than a desktop-style text block. */
   .hero.container {
     width: 100%;
     padding: 0;
@@ -115,7 +114,6 @@
   .floating-card { right: 8px; bottom: 20px; padding: 8px 9px; border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.58); color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,.24); font-size: 8px; border-radius: 9px; }
   .floating-card svg { color: var(--mobile-red); width: 13px; }
 
-  /* The old two promo cards are absorbed into the top hero. */
   .promo { display: none; }
 
   .category-area, .products-section, .why { padding-top: 24px; }
@@ -124,7 +122,6 @@
   .section-heading h2 { font-size: 21px; }
   .section-kicker { font-size: 8px; }
 
-  /* First category row intentionally contains only the two primary tabs requested. */
   .primary-category-row {
     display: flex;
     gap: 9px;
@@ -140,7 +137,6 @@
   .primary-category svg { display: none; }
   .primary-category:nth-child(2) { background: #111; color: #fff; border-color: #111; }
 
-  /* Second category row is a dense horizontal catalog that can be swiped sideways. */
   .secondary-category-row {
     display: flex;
     gap: 8px;
@@ -155,7 +151,6 @@
   .secondary-category:hover, .secondary-category.active { border-color: var(--mobile-red); transform: none; box-shadow: 0 5px 16px rgba(0,0,0,.07); }
   .category-toggle { font-size: 10px; margin-top: 6px; }
 
-  /* Product browsing: two-column, image-forward cards visible immediately on mobile. */
   .products-section { padding-inline: 12px; }
   .products-section .section-heading { position: relative; }
   .product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
@@ -206,4 +201,25 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .product-grid { grid-template-columns: repeat(4, 1fr); }
   .primary-category-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Requested mobile navigation update */
+@media (max-width: 767px) {
+  .topbar .account-btn { display: none !important; }
+
+  .bottom-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: stretch;
+  }
+
+  /* Remove Search and Account from the bottom navigation */
+  .bottom-nav a:nth-child(3),
+  .bottom-nav a:nth-child(5) {
+    display: none !important;
+  }
+
+  .bottom-nav a {
+    min-width: 0;
+    width: 100%;
+  }
 }
