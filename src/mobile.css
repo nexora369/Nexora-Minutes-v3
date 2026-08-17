@@ -1,0 +1,181 @@
+/* Nexora Minutes — mobile-first visual layer
+   Inspired by the requested immersive, product-dense feel without copying any reference UI. */
+
+@media (max-width: 767px) {
+  :root {
+    --mobile-red: #ff1d2d;
+    --mobile-black: #0b0b0d;
+    --mobile-white: #ffffff;
+    --mobile-soft: #f5f5f6;
+  }
+
+  body { background: #fff; overflow-x: hidden; }
+  .container { width: 100%; padding-inline: 14px; }
+
+  .topbar { position: sticky; top: 0; }
+  .topbar-inner {
+    min-height: 58px;
+    width: 100%;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .brand { font-size: 13px; gap: 6px; }
+  .brand-mark { width: 29px; height: 29px; border-radius: 8px; font-size: 17px; }
+  .delivery-pill { display: none; }
+  .header-actions { margin-left: auto; }
+  .account-btn, .cart-btn { padding: 8px; border-radius: 9px; }
+  .account-btn span, .cart-btn span { display: none; }
+  .mobile-only { display: inline-flex; padding: 8px; }
+
+  .search-area {
+    position: sticky;
+    top: 58px;
+    z-index: 40;
+    padding: 10px 12px 8px;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #eee;
+  }
+  .search-box {
+    height: 48px;
+    width: 100%;
+    border-radius: 15px;
+    background: #f4f4f5;
+    box-shadow: 0 4px 14px rgba(0,0,0,.05);
+  }
+
+  .hero.container {
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    border-radius: 0 0 24px 24px;
+    min-height: 305px;
+    display: block;
+    background:
+      radial-gradient(circle at 85% 18%, rgba(255,255,255,.24), transparent 28%),
+      linear-gradient(135deg, #151518 0%, #2a0c10 48%, #ff1d2d 145%);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  }
+  .hero-copy { padding: 28px 18px 24px; }
+  .eyebrow { color: #fff; opacity: .82; font-size: 9px; letter-spacing: 1px; }
+  .hero h1 {
+    margin: 10px 0 10px;
+    font-size: clamp(31px, 10vw, 45px);
+    line-height: .98;
+    letter-spacing: -2px;
+  }
+  .hero h1 span { color: #fff; }
+  .hero p { color: rgba(255,255,255,.82); font-size: 12px; line-height: 1.5; max-width: 330px; }
+  .hero .primary-btn { background: #fff; color: var(--mobile-red); box-shadow: none; padding: 11px 14px; }
+  .trust-row { margin-top: 15px; gap: 8px; color: rgba(255,255,255,.82); font-size: 9px; }
+  .hero-visual { display: none; }
+
+  .category-area, .products-section, .why { padding-top: 28px; }
+  .section-heading { margin-bottom: 12px; }
+  .section-heading h2 { font-size: 21px; }
+  .section-kicker { font-size: 9px; }
+
+  .primary-category-row {
+    display: flex;
+    gap: 9px;
+    overflow-x: auto;
+    padding: 2px 1px 6px;
+    scrollbar-width: none;
+  }
+  .primary-category-row::-webkit-scrollbar { display: none; }
+  .primary-category {
+    flex: 0 0 116px;
+    min-height: 68px;
+    border-radius: 14px;
+    padding: 10px;
+  }
+  .primary-category span { width: 34px; height: 34px; font-size: 19px; border-radius: 10px; }
+  .primary-category strong { font-size: 11px; }
+  .primary-category svg { display: none; }
+
+  .secondary-category-row {
+    gap: 8px;
+    padding: 8px 1px 4px;
+  }
+  .secondary-category {
+    flex-basis: 92px;
+    min-height: 82px;
+    border-radius: 13px;
+    padding: 8px 5px;
+    gap: 5px;
+  }
+  .secondary-category span { font-size: 24px; }
+  .secondary-category strong { font-size: 9px; }
+  .category-toggle { font-size: 10px; margin-top: 6px; }
+
+  .promo {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-top: 22px;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  .promo::-webkit-scrollbar { display: none; }
+  .promo-card {
+    flex: 0 0 86%;
+    min-height: 155px;
+    padding: 20px;
+    border-radius: 17px;
+  }
+  .promo-card h2 { font-size: 22px; margin: 10px 0 6px; }
+  .promo-card p { font-size: 11px; }
+
+  .wide-offer { margin-top: 22px; padding: 20px; border-radius: 17px; }
+
+  /* Dense but readable mobile product browsing. */
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+  .product-card { border-radius: 14px; }
+  .product-image { height: 145px; }
+  .product-emoji { font-size: 58px; }
+  .product-info { padding: 9px; }
+  .product-info h3 { font-size: 12px; }
+  .product-info p { font-size: 10px; }
+  .price-row strong { font-size: 15px; }
+  .stock-row { margin-top: 8px; }
+  .stock-row span { font-size: 9px; }
+  .stock-row button { padding: 6px 8px; font-size: 10px; }
+
+  .why { margin-top: 30px; margin-bottom: 25px; padding: 20px; display: block; }
+  .why h2 { font-size: 22px; }
+  .why-grid { grid-template-columns: repeat(3, 1fr); margin-top: 14px; gap: 7px; }
+  .why-grid div { padding: 11px 8px; border-radius: 11px; }
+  .why-grid b { font-size: 18px; }
+  .why-grid span { font-size: 9px; }
+
+  footer { padding-bottom: 90px; }
+  .footer-inner { display: block; }
+  .footer-links { justify-content: flex-start; margin-top: 18px; }
+
+  .bottom-nav {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 80;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 8px 6px;
+    border: 1px solid #e7e7e8;
+    border-radius: 18px;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 12px 35px rgba(0,0,0,.16);
+  }
+
+  .cart-drawer, .checkout-drawer, .success-drawer { width: 100%; border-radius: 20px 20px 0 0; }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-grid { grid-template-columns: repeat(4, 1fr); }
+  .primary-category-row { grid-template-columns: repeat(2, 1fr); }
+}
