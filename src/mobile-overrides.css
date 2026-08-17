@@ -1,0 +1,29 @@
+/* Nexora Minutes — final mobile navigation + homepage ad polish */
+@media (max-width: 767px) {
+  .topbar .account-btn { display: none !important; }
+  .bottom-nav { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; align-items: stretch; }
+  .bottom-nav a:nth-child(3) { display: none !important; }
+  .bottom-nav a:nth-child(1), .bottom-nav a:nth-child(2), .bottom-nav a:nth-child(4), .bottom-nav a:nth-child(5) { display: flex !important; min-width: 0; width: 100%; justify-content: center; min-height: 52px; border-radius: 14px; gap: 4px; }
+  .bottom-nav a:nth-child(1) { order: 1; }
+  .bottom-nav a:nth-child(2) { order: 2; }
+  .bottom-nav a:nth-child(4) { order: 3; }
+  .bottom-nav a:nth-child(5) { order: 4; }
+  .bottom-nav a span { font-size: 10px; }
+
+  .hero.container { min-height: 350px; grid-template-columns: minmax(0,1.12fr) minmax(0,.88fr); border-radius: 0 0 26px 26px; overflow: hidden; background: radial-gradient(circle at 84% 16%,rgba(255,255,255,.20),transparent 22%),radial-gradient(circle at 78% 82%,rgba(255,29,45,.55),transparent 34%),linear-gradient(135deg,#07080a 0%,#121417 48%,#610c14 100%); box-shadow: 0 14px 34px rgba(0,0,0,.17); isolation:isolate; }
+  .hero.container::before { width:290px; height:290px; right:-120px; bottom:-105px; border:24px solid rgba(255,255,255,.08); box-shadow:0 0 0 26px rgba(255,29,45,.05),0 0 0 54px rgba(255,255,255,.035); }
+  .hero.container::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,0,0,.10),transparent 60%); pointer-events:none; z-index:0; }
+  .hero-copy { padding:31px 5px 25px 18px; z-index:3; }
+  .eyebrow { font-size:8px; line-height:1.35; letter-spacing:1.05px; }
+  .hero h1 { margin:11px 0; font-size:clamp(30px,9.5vw,44px); line-height:.96; letter-spacing:-2px; max-width:245px; }
+  .hero p { font-size:11px; line-height:1.48; max-width:225px; margin-bottom:14px; }
+  .hero .primary-btn { background:#ff1d2d; color:#fff; min-height:42px; padding:11px 13px; font-size:11px; border-radius:12px; box-shadow:0 9px 25px rgba(255,29,45,.28); }
+  .trust-row { margin-top:13px; gap:6px; font-size:7.5px; flex-wrap:wrap; }
+  .hero-visual { min-height:350px; z-index:2; }
+  .speed-ring { width:148px; height:148px; border-width:20px; font-size:58px; top:80px; right:4px; transform:rotate(-12deg); background:rgba(255,255,255,.035); box-shadow:0 20px 40px rgba(0,0,0,.25); }
+  .speed-ring span { transform:translate(52px,-44px) rotate(12deg); font-size:25px; }
+  .hero-visual::before,.hero-visual::after { width:64px; height:64px; border-radius:17px; font-size:34px; box-shadow:0 14px 30px rgba(0,0,0,.25); z-index:3; }
+  .hero-visual::before { content:"🍚"; top:27px; right:7px; transform:rotate(7deg); }
+  .hero-visual::after { content:"🥤"; bottom:67px; right:45px; transform:rotate(-8deg); }
+  .floating-card { right:4px; bottom:20px; font-size:8px; border-radius:9px; white-space:nowrap; }
+}
