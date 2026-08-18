@@ -7,6 +7,7 @@ import './home-enhancements.css';
 import './mobile.css';
 import './mobile-overrides.css';
 import './mobile-redesign.css';
+import './mobile-final.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
