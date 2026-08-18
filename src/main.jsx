@@ -6,6 +6,7 @@ import './checkout.css';
 import './home-enhancements.css';
 import './mobile.css';
 import './mobile-overrides.css';
+import './mobile-redesign.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
