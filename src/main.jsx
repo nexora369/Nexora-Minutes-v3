@@ -9,6 +9,7 @@ import './mobile-overrides.css';
 import './mobile-redesign.css';
 import './mobile-final.css';
 import './account-auth.css';
+import './account-auth.js';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
