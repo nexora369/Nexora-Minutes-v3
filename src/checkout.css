@@ -1,3 +1,4 @@
+@import './frontend-v1.css';
 .cart-backdrop{position:fixed;inset:0;z-index:90;border:0;background:rgba(0,0,0,.48);backdrop-filter:blur(2px)}
 .cart-drawer,.checkout-drawer,.success-drawer{position:fixed;z-index:91;top:0;right:0;width:min(430px,100%);height:100dvh;background:#fff;box-shadow:-12px 0 35px rgba(0,0,0,.18);display:flex;flex-direction:column;animation:cartIn .2s ease-out}@keyframes cartIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
 .cart-header{padding:22px 20px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.cart-header h2{margin:4px 0 0;font-size:23px}.drawer-close{width:38px;height:38px;border:1px solid var(--line);background:#fff;border-radius:10px;display:grid;place-items:center}
