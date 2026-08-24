@@ -14,6 +14,7 @@ import './nexora-live-home.css';
 import './nexora-spec.css';
 import './account-auth.css';
 import './account-auth.js';
+import './nexora-spec-final.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
